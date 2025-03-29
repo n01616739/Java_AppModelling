@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Place Order</title>
+</head>
+<body>
+
+<!-- Logout link -->
+<div style="text-align: right;">
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<h2>Stock Order Form</h2>
+
+<form th:action="@{/submit-order}" th:object="${order}" method="post">
+    <label>Stock Name:</label>
+    <input type="text" th:field="*{stockName}" required/><br><br>
+
+    <label>Quantity:</label>
+    <input type="number" th:field="*{quantity}" required/><br><br>
+
+    <label>Account ID:</label>
+    <input type="text" th:field="*{accountId}" required/><br><br>
+
+    <button type="submit">Submit Order</button>
+</form>
+
+<p th:text="${message}" style="color:green;"></p>
+
+</body>
+</html>
