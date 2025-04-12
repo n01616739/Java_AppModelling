@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirmation</title>
+    <style>
+        body {
+            background-color: #e6ffec;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .message-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: green;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: dodgerblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <h2 th:text="${successMessage}">Customer details successfully saved!</h2>
+        <a th:href="@{/}">⬅ Back to Form</a>
+    </div>
+</body>
+</html>
